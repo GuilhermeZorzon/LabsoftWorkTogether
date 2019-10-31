@@ -42,7 +42,7 @@ class LandingPage extends Component {
                         Realize seus sonhos sem ter que se preocupar em chefiar os seus funcionários.                    
                     </div>
                     <a href="/CostumerForm">
-                        <button style={{color: 'white', borderRadius: '10px', border: 'transparent', marginLeft: '175px', backgroundColor: '#00507C', marginTop: '50px', width: '200px', marginBottom: '200px', height: '30px'}}>
+                        <button style={{cursor: 'pointer', color: 'white', borderRadius: '10px', border: 'transparent', marginLeft: '175px', backgroundColor: '#00507C', marginTop: '50px', width: '200px', marginBottom: '200px', height: '30px'}}>
                             Quero criar meu projeto
                         </button>
                      </a>
@@ -59,28 +59,45 @@ class LandingPage extends Component {
                         Quer criar seu portifolio online, mas não tem as habilidades necessárias para criar um site?
                     </div>
                     <div style={{marginLeft: '150px', marginTop: '35px', fontSize: '20px'}}>
-                        Quer trabalhar de forma independe apenas nós projetos que te interessam?
+                        Quer trabalhar de forma independe apenas nos projetos que te interessam?
                     </div>
                     <div style={{marginLeft: '150px', marginTop: '55px', paddingBottom: '120px', fontSize: '20px', fontWeight: 'bold'}}>
-                        Nós temos a solução para solução para seus problemas. 
+                        Nós temos a solução para seus problemas. 
                     </div>
                 </div>
-                <div id='talentos' style={{backgroundColor:'#FFFAF2', opacity: '0.8'}}>
+                <div id='talentos' style={{backgroundColor:'#FFFAF2', opacity: '0.8', height: '700px'}}>
                     <h1 color='black' align='right' style={{margin: '0px', marginRight: '250px', paddingTop: '45px',  fontSize: '30px', fontWeight: 'bold'}}>
                         Quer ser contratado?
                     </h1>
                     <div style={{marginRight: '165px', marginTop: '35px', fontSize: '20px', width: '350px', float: 'right', fontWeight: 'bold'}}>
                         Sou um especialista 
+                        <div position='relative' style={{marginTop: '35px', fontSize: '20px', width: '350px', fontWeight: 'normal'}}>
+                            Se junte ao nosso grupo de profissionais à procura de um serviço especializado e que atende a seus desejos pessoais.
+                        </div>
                     </div>
-                    <div style={{marginRight: '165px', marginTop: '155px', fontSize: '20px', width: '350px', float: 'right'}}>
-                        Se junte ao nosso grupo de profissionais à procura de um serviço especializado e que atende a seus desejos pessoais.
+                    <div style={{paddingBottom: '355px', marginRight: '290px'}}>
+                        <img src={Girl} alt="man" width='650' position='absolute' style={{transform: 'rotateY(180deg)', float: 'left', marginTop: '37.5px', marginLeft: '50px'}}/>
                     </div>
-                    <img src={Girl} alt="man" width='450' position='absolute' style={{transform: 'rotateY(180deg)', float: 'left', marginTop: '-100px'}}/>
-                    <a href="/CostumerForm">
-                        <button style={{color: 'white', borderRadius: '10px', border: 'transparent', marginRight: '5px', backgroundColor: '#00507C', marginTop: '50px', width: '200px', marginBottom: '200px', height: '30px'}}>
-                            Quero criar meu projeto
-                        </button>
-                    </a>
+                    <div style={{paddingBottom: '150px', marginRight: '290px'}}>
+                        <a href="/TalentForm">
+                            <button style={{float: 'right', cursor: 'pointer', color: 'white', borderRadius: '10px', border: 'transparent', backgroundColor: '#00507C', marginTop: '-150px', width: '200px', marginBottom: '70px', height: '30px'}}>
+                                Quero ser um talento
+                            </button>
+                        </a>
+                    </div>
+                    <div style={{marginRight: '165px', fontSize: '20px', width: '350px', float: 'right', fontWeight: 'bold', marginTop: '-200px'}}>
+                            Sou um gerente 
+                            <div position='relative' style={{marginTop: '35px', fontSize: '20px', width: '350px', fontWeight: 'normal'}}>
+                                Coordene projetos remotamente e escolha os melhores em suas áreas numa plataforma que lhe torna independente.
+                            </div>
+                    </div>
+                    <div style={{float: 'right', marginRight: '285px', marginTop: '-32.5px'}}>
+                        <a href="/Login">
+                            <button style={{cursor: 'pointer', color: 'white', borderRadius: '10px', border: 'transparent', backgroundColor: '#00507C', marginBottom: '100px', width: '200px', height: '30px'}}>
+                                Quero ser um integrador
+                            </button>
+                        </a>
+                    </div>
                 </div>
                 <Footer id='contact' size='mega' style={{backgroundColor:'black', height: '400px'}}>
                     <div>
