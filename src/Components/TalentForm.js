@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class LandingPage extends Component {
+class TalentForm extends Component {
     render() {
         return(
             <div>Talent Form</div>
@@ -8,4 +8,4 @@ class LandingPage extends Component {
     }
 }
 
-export default LandingPage;
+export default TalentForm;
