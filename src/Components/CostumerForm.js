@@ -35,6 +35,11 @@ class CostumerForm extends Component {
                 <div style={{marginLeft: '250px', width: '850px', marginTop: '75px', marginBottom: '25px'}}>
                     <div style={{marginLeft: '30px', marginBottom: '50px', fontSize: '16px'}}>Quanto você está disposto a investir?</div>
                     <Slider min={0} max={100} defaultValue={50}/>
+                    <div style={{marginTop: '25px'}}>
+                        <span style={{fontSize: '18px', color: '#F86D04'}}>R$ 10.000,00</span>
+                        <span style={{fontSize: '18px', color: '#F86D04', marginLeft: '250px'}}>R$ 50.000,00</span>
+                        <span style={{fontSize: '18px', color: '#F86D04', marginLeft: '250px'}}>R$ +110.000,00</span>
+                    </div>   
                 </div>
                 <div>
                     <a href="/" style={{float: 'left', margin: '0', padding: '0'}}>

@@ -35,7 +35,7 @@ class LandingPage extends Component {
                         Quer contratar ?
                     </h1>
                     <div style={{marginLeft: '150px', marginTop: '75px', fontSize: '20px', width: '350px'}}>
-                        Nós fale que tipo de projeto você busca desenvolver e nós te juntamos com um gerente que irá escolher os melhores profissionais para realzar a sua tarefa.
+                        Nos fale que tipo de projeto você busca desenvolver e nós te juntamos com um gerente que irá escolher os melhores profissionais para realizar a sua tarefa.
                     </div>
                     <img src={Man} alt="man" width='380' position='absolute' style={{float: 'right', marginTop: '-240px'}}/>
                     <div style={{marginLeft: '150px', marginTop: '25px', fontSize: '20px', width: '350px'}}>
@@ -53,10 +53,10 @@ class LandingPage extends Component {
                         Somos uma empresa focada em unir profissionais talentosos de todo o Brasil com pessoas em busca de resolver seus problemas. 
                     </div>
                     <div style={{marginLeft: '150px', marginTop: '35px', fontSize: '20px'}}>
-                        Quer abrir uma startup desruptiva e procura a plataforma correta pra se inserir no mercado?
+                        Quer abrir uma startup disruptiva e procura a plataforma correta pra se inserir no mercado?
                     </div>
                     <div style={{marginLeft: '150px', marginTop: '35px', fontSize: '20px'}}>
-                        Quer criar seu portifolio online, mas não tem as habilidades necessárias para criar um site?
+                        Quer criar seu portfólio online, mas não tem as habilidades necessárias para criar um site?
                     </div>
                     <div style={{marginLeft: '150px', marginTop: '35px', fontSize: '20px'}}>
                         Quer trabalhar de forma independe apenas nos projetos que te interessam?
