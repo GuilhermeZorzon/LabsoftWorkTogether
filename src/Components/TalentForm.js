@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { Textfield, Slider } from 'react-mdl';
 
 function showValue (value) {
@@ -8,8 +7,16 @@ function showValue (value) {
 
 class TalentForm extends Component {
     render() {
+        const cont = {
+            backgroundColor: '#FFF6E6', 
+            padding: '0', 
+            margin: '0',  
+            width: '100%', 
+            height: '820px',
+            marginTop: '-25px'
+        };
         return(
-            <div style={{backgroundColor: '#FFF6E6', padding: '0', margin: '0',  width: '100%', height: '780px', marginTop: '-25px'}}>
+            <div style={{backgroundColor: '#FFF6E6', padding: '0', margin: '0',  width: '100%', height: '820px',marginTop: '-25px'}}>
                 <h1 align='center' style={{fontSize: '45px', marginBottom: '0', paddingTop: '10px'}}>Bem vindo ao WorkTogether</h1>
                 <h2 align='center' style={{fontSize: '27px', marginTop: '0'}}>Explique sua ideia e te daremos o que você precisa</h2>
                 <div align='center'>

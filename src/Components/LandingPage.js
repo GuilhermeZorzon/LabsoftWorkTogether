@@ -103,13 +103,13 @@ class LandingPage extends Component {
                     <div>
                         <h1 style={{color:'white', textAlign: 'center'}}>Entre em contato</h1>
                         <div position='absolute' style={{marginLeft: '212.5px'}}>
-                            <a href='/'>
+                            <a href='#home'>
                                 <img src={InstagramLogo} alt='Instagram logo' width='80' position='absolute' style={{marginLeft: '150px', marginTop: '50px'}}/>
                             </a>
-                            <a href='/'>
+                            <a href='#home'>
                             <img src={FacebookLogo} alt='Facebook logo' width='80' position='absolute' style={{marginLeft: '150px', marginTop: '50px'}}/>
                             </a>
-                            <a href='/'>
+                            <a href='#home'>
                                 <img src={TwitterLogo} alt='Twitter logo' width='80' position='absolute' style={{marginLeft: '150px', marginTop: '50px'}}/>
                             </a>
                         </div>
