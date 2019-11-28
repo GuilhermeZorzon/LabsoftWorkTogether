@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Layout, Header, Navigation } from 'react-mdl';
 import TextField  from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 
 import Logo from '../Images/logo-worktogether.png';
+import auth from  './Authentication';
 
 const CssTextField = withStyles({
     root: {
@@ -22,10 +23,21 @@ const CssTextField = withStyles({
   })(TextField);
 
 
-class Login extends Component {
-    render() {
+export const Login = props => {
+        
+        const [userName, setUserName] = useState('');
+        const [password, setPassword] = useState('');
+
+        function handleUserChange(e) {
+            setUserName(e.target.value);
+        }
+
+        function handlePasswordChange(e) {
+            setPassword(e.target.value);
+        }
+
         return(
-            <div style={{height: '654px',  backgroundColor: '#F86D04', opacity: '0.7'}}>
+            <div style={{height: '654px',  backgroundColor: '#FC8C36', opacity: '0.7'}}>
                 <div style={{height: '100px', position: 'relative'}}>
                     <Layout fixedHeader>
                         <Header title={<img src={Logo} alt='logo' width='70' style={{marginTop: '10px'}} />} style={{backgroundColor: '#FFF'}}>
@@ -43,15 +55,21 @@ class Login extends Component {
                             label="Email"
                             variant="outlined"
                             id="custom-css-outlined-input"
+                            onChange={handleUserChange}
                         />
                         <CssTextField
                             style={{marginLeft: '185px', marginTop: '30px'}}
                             label="Senha"
                             variant="outlined"
                             id="custom-css-outlined-input"
+                            onChange={handlePasswordChange}
                         />
-                        <a href="/">
-                            <button style={{marginLeft: '235px', marginTop: '40px', cursor: 'pointer', color: 'white', borderRadius: '10px', border: 'transparent', backgroundColor: '#F86D04', width: '100px', height: '30px', opacity: '1.0'}}>
+                        <a>
+                            <button onClick={() => {
+                                auth.login(userName, password, () => {
+                                    props.history.push("/IntegradorPage");
+                                });
+                            }} style={{marginLeft: '235px', marginTop: '40px', cursor: 'pointer', color: 'white', borderRadius: '10px', border: 'transparent', backgroundColor: '#F86D04', width: '100px', height: '30px', opacity: '1.0'}}>
                                 Entrar
                             </button>
                         </a>
@@ -59,7 +77,6 @@ class Login extends Component {
                 </div>
             </div>
         )
-    }
 }
 
 export default Login;

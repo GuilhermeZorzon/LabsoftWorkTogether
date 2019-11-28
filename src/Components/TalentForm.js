@@ -7,14 +7,6 @@ function showValue (value) {
 
 class TalentForm extends Component {
     render() {
-        const cont = {
-            backgroundColor: '#FFF6E6', 
-            padding: '0', 
-            margin: '0',  
-            width: '100%', 
-            height: '820px',
-            marginTop: '-25px'
-        };
         return(
             <div style={{backgroundColor: '#FFF6E6', padding: '0', margin: '0',  width: '100%', height: '820px',marginTop: '-25px'}}>
                 <h1 align='center' style={{fontSize: '45px', marginBottom: '0', paddingTop: '10px'}}>Bem vindo ao WorkTogether</h1>
