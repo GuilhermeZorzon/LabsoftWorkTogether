@@ -15,7 +15,7 @@ class LandingPage extends Component {
     render() {
         return(
             <div>
-                <div id='home' style={{height:'500px', position: 'relative'}}>
+                <div id='home' style={{height:'33.5em', position: 'relative'}}>
                     <Layout style={{background: `url(${LandingPageImage}) center / cover`, opacity: '0.8', backgroundColor: '#C67E49'}}>
                         <Header transparent>
                             <img src={Logo} alt='logo' width='130' style={{marginTop: '80px'}} />
@@ -23,7 +23,7 @@ class LandingPage extends Component {
                                 <a href="#home" style={{fontSize: '20px', position: 'absolute'}}>Home</a>
                                 <a href="#about" style={{marginLeft: '150px', fontSize: '20px', position: 'absolute'}}>Sobre</a>
                                 <a href="#contact" style={{marginLeft: '300px', fontSize: '20px', position: 'absolute'}}>Contato</a>
-                                <a href="/Login" style={{marginLeft: '525px', fontSize: '20px', position: 'absolute'}}>Entrar</a>
+                                <a href="/IntegradorPage" style={{marginLeft: '525px', fontSize: '20px', position: 'absolute'}}>Entrar</a>
                             </Navigation>
                         </Header>
                         <h1 style={{color: 'white', fontWeight:'bold', marginLeft: '260px', marginTop: '200px', fontSize: '100px', position: 'absolute'}}>Let's</h1>
@@ -92,7 +92,7 @@ class LandingPage extends Component {
                             </div>
                     </div>
                     <div style={{float: 'right', marginRight: '285px', marginTop: '-32.5px'}}>
-                        <a href="/Login">
+                        <a href="/IntegradorPage">
                             <button style={{cursor: 'pointer', color: 'white', borderRadius: '10px', border: 'transparent', backgroundColor: '#00507C', marginBottom: '100px', width: '200px', height: '30px'}}>
                                 Quero ser um integrador
                             </button>

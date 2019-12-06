@@ -67,6 +67,7 @@ export const Login = props => {
                         <a>
                             <button onClick={() => {
                                 auth.login(userName, password, () => {
+                                // auth.login('gui.zorzon@usp.br', 'labsoft1', () => {
                                     props.history.push("/IntegradorPage");
                                 });
                             }} style={{marginLeft: '235px', marginTop: '40px', cursor: 'pointer', color: 'white', borderRadius: '10px', border: 'transparent', backgroundColor: '#F86D04', width: '100px', height: '30px', opacity: '1.0'}}>
