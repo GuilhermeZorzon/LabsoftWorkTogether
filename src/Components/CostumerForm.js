@@ -5,7 +5,7 @@ import { Textfield, Slider } from 'react-mdl';
 class CostumerForm extends Component {
     render() {
         return(
-            <div style={{backgroundColor: '#FFF6E6', padding: '0', margin: '0',  width: '100%', height: '820px', marginTop: '-25px'}}>
+            <div style={{backgroundColor: '#FFF6E6', padding: '0', margin: '0',  position: 'absolute', height: '130vh', width: '100vw'}}>
                 <h1 align='center' style={{fontSize: '45px', marginBottom: '0', paddingTop: '10px'}}>Bem vindo ao WorkTogether</h1>
                 <h2 align='center' style={{fontSize: '27px', marginTop: '0'}}>Explique sua ideia e te daremos o que você precisa</h2>
                 <div align='center'>

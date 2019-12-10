@@ -33,46 +33,6 @@ const columns = [
   },
 ];
 
-function createData(name, contact, specialty, price, status) {
-  return { name, contact, specialty, price, status };
-}
-
-const rows = [
-    createData('Guilherme', 'gui@usp', 'Backend', '25,00', 'Disponível' ),
-    createData('Dudu', 'dudu@usp', 'FrontEnd', '20,00', 'Disponível' ),
-    createData('Paulo de Paula', 'p.paula@usp', 'Backend', '15,00', 'Em serviço' ),
-    createData('Guilherme', 'gui@usp', 'Backend', '25,00', 'Disponível' ),
-    createData('Dudu', 'dudu@usp', 'FrontEnd', '20,00', 'Disponível' ),
-    createData('Paulo de Paula', 'p.paula@usp', 'Backend', '15,00', 'Em serviço' ),
-    createData('Guilherme', 'gui@usp', 'Backend', '25,00', 'Disponível' ),
-    createData('Dudu', 'dudu@usp', 'FrontEnd', '20,00', 'Disponível' ),
-    createData('Paulo de Paula', 'p.paula@usp', 'Backend', '15,00', 'Em serviço' ),
-    createData('Guilherme', 'gui@usp', 'Backend', '25,00', 'Disponível' ),
-    createData('Dudu', 'dudu@usp', 'FrontEnd', '20,00', 'Disponível' ),
-    createData('Guilherme', 'gui@usp', 'Backend', '25,00', 'Disponível' ),
-    createData('Dudu', 'dudu@usp', 'FrontEnd', '20,00', 'Disponível' ),
-    createData('Paulo de Paula', 'p.paula@usp', 'Backend', '15,00', 'Em serviço' ),
-    createData('Guilherme', 'gui@usp', 'Backend', '25,00', 'Disponível' ),
-    createData('Dudu', 'dudu@usp', 'FrontEnd', '20,00', 'Disponível' ),
-    createData('Paulo de Paula', 'p.paula@usp', 'Backend', '15,00', 'Em serviço' ),
-    createData('Guilherme', 'gui@usp', 'Backend', '25,00', 'Disponível' ),
-    createData('Dudu', 'dudu@usp', 'FrontEnd', '20,00', 'Disponível' ),
-    createData('Paulo de Paula', 'p.paula@usp', 'Backend', '15,00', 'Em serviço' ),
-    createData('Guilherme', 'gui@usp', 'Backend', '25,00', 'Disponível' ),
-    createData('Dudu', 'dudu@usp', 'FrontEnd', '20,00', 'Disponível' ),
-    createData('Guilherme', 'gui@usp', 'Backend', '25,00', 'Disponível' ),
-    createData('Dudu', 'dudu@usp', 'FrontEnd', '20,00', 'Disponível' ),
-    createData('Paulo de Paula', 'p.paula@usp', 'Backend', '15,00', 'Em serviço' ),
-    createData('Guilherme', 'gui@usp', 'Backend', '25,00', 'Disponível' ),
-    createData('Dudu', 'dudu@usp', 'FrontEnd', '20,00', 'Disponível' ),
-    createData('Paulo de Paula', 'p.paula@usp', 'Backend', '15,00', 'Em serviço' ),
-    createData('Guilherme', 'gui@usp', 'Backend', '25,00', 'Disponível' ),
-    createData('Dudu', 'dudu@usp', 'FrontEnd', '20,00', 'Disponível' ),
-    createData('Paulo de Paula', 'p.paula@usp', 'Backend', '15,00', 'Em serviço' ),
-    createData('Guilherme', 'gui@usp', 'Backend', '25,00', 'Disponível' ),
-    createData('Dudu', 'dudu@usp', 'FrontEnd', '20,00', 'Disponível' ),
-];
-
 const useStyles = makeStyles({
   root: {
     width: '100%',
@@ -98,7 +58,7 @@ const StyledTableRow = withStyles(theme => ({
     },
   }))(TableRow);
 
-export default function TalentTable() {
+export const TalentTable = (props) => {
   const classes = useStyles();
 
   return (
@@ -119,7 +79,7 @@ export default function TalentTable() {
             </StyledTableRow>
           </TableHead>
           <TableBody>
-            {rows.map(row => {
+            {props.rows.map(row => {
               return (
                 <StyledTableRow hover role="checkbox" tabIndex={-1} key={row.code}>
                   {columns.map(column => {

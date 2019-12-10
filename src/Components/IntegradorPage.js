@@ -1,15 +1,34 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Layout, Header, Navigation } from 'react-mdl';
 
 import Logo from '../Images/WTG_profile.png';
+import WTG_Logo from '../Images/logo-worktogether.png';
 
-import TalentTable from './TalentTable.js';
+import { TalentTable } from './TalentTable.js';
 import CostumerCard from './CostumerCard';
 
-class IntegradorPage extends Component {
-    render() {
+// This is a mock from mocky, to be changed when the API is fully functional
+const API_URL = 'http://www.mocky.io/v2/5df008c92f000003178e0f01'
+
+export default function IntegradorPage() {
+    const [rows, setRows] = useState([]);
+    const [hasLoaded, setHasLoaded] = useState(false);
+
+    useEffect(() => {
+        const fetchUser = async () => {
+          const response = await fetch(
+            API_URL
+          );
+          const jsonRows = await response.json();
+          setRows(jsonRows);
+          setHasLoaded(true)
+        };
+        fetchUser();
+      }, []);
+   
+    if (hasLoaded) {
         return(
-            <div style={{height: '654px', backgroundColor: '#FC8C36'}}>
+            <div style={{position: 'absolute', height: '100vh', width: '100vw', backgroundColor: '#FC8C36'}}>
                 <div style={{height: '100px', position: 'relative'}}>
                     <Layout fixedHeader>
                         <Header title={<img src={Logo} alt='logo' width='60' style={{marginLeft: '-35px'}}/>} style={{backgroundColor: '#FFF'}}>
@@ -20,7 +39,7 @@ class IntegradorPage extends Component {
                     </Layout>
                 </div>
                 <div style={{width: '49%', float: 'right', display: 'inline-block', marginRight: '10px', marginTop: '-28px'}}>
-                    <TalentTable/>
+                    <TalentTable rows = {rows}/>
                 </div>
                 <div style={{width: '25%', float: 'left', display: 'inline-block', marginLeft: '30px', marginTop: '-28px', marginBottom: '35px'}}>
                     <CostumerCard/>
@@ -30,7 +49,14 @@ class IntegradorPage extends Component {
                 </div>
             </div>
         )
+    } else {
+        return (
+        <div align='center' style={{position: 'absolute', backgroundColor: '#FFF6E6', height: '100vh', width: '100vw'}}>
+            <img src={WTG_Logo} alt='logo' width='180' style={{marginTop: '25vh'}}/>
+            <h1>Carregando dados</h1>
+        </div>
+        )
     }
 }
 
-export default IntegradorPage;
+//export default IntegradorPage;
