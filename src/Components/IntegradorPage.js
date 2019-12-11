@@ -7,8 +7,6 @@ import WTG_Logo from '../Images/logo-worktogether.png';
 import { TalentTable } from './TalentTable.js';
 import CostumerCard from './CostumerCard';
 
-// This is a mock from mocky, to be changed when the API is fully functional
-// const API_URL = 'http://www.mocky.io/v2/5df008c92f000003178e0f01'
 const API_URL = '/talents'
 
 export default function IntegradorPage() {
