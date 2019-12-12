@@ -12,6 +12,7 @@ const CLIENTS_API_URL = '/clients'
 
 export default function IntegradorPage() {
     const [rows, setRows] = useState([]);
+    const [clients, setClients] = useState([]);
     const [hasLoadedTalent, setHasLoadedTalent] = useState(false);
     const [hasLoadedClient, setHasLoadedClient] = useState(false);
 
@@ -28,7 +29,8 @@ export default function IntegradorPage() {
           const response = await fetch(
             CLIENTS_API_URL
           );
-          const jsonRows = await response.json();
+          const jsonClients = await response.json();
+          setClients(jsonClients)
           setHasLoadedClient(true)
         };
         fetchTalent();
@@ -50,11 +52,8 @@ export default function IntegradorPage() {
                 <div style={{width: '49%', float: 'right', display: 'inline-block', marginRight: '10px', marginTop: '-28px'}}>
                     <TalentTable rows = {rows}/>
                 </div>
-                <div style={{width: '25%', float: 'left', display: 'inline-block', marginLeft: '30px', marginTop: '-28px', marginBottom: '35px'}}>
-                    <CostumerCard name={'Maria'} project={'App'} contact={'maria@usp'} price={'15.000'} status={'Em andamento'}/>
-                </div>
-                <div style={{width: '25%', float: 'left', display: 'inline-block', marginLeft: '30px', marginTop: '-28px', marginBottom: '35px'}}>
-                    <CostumerCard/>
+                <div style={{width: '25%', float: 'left', display: 'inline-block', marginLeft: '30px', marginTop: '-28px'}}>
+                    <CostumerCard clients={clients}/>
                 </div>
             </div>
         )
