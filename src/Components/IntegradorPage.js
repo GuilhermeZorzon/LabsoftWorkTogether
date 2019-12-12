@@ -7,25 +7,35 @@ import WTG_Logo from '../Images/logo-worktogether.png';
 import { TalentTable } from './TalentTable.js';
 import CostumerCard from './CostumerCard';
 
-const API_URL = '/talents'
+const TALENTS_API_URL = '/talents'
+const CLIENTS_API_URL = '/clients'
 
 export default function IntegradorPage() {
     const [rows, setRows] = useState([]);
-    const [hasLoaded, setHasLoaded] = useState(false);
+    const [hasLoadedTalent, setHasLoadedTalent] = useState(false);
+    const [hasLoadedClient, setHasLoadedClient] = useState(false);
 
     useEffect(() => {
-        const fetchUser = async () => {
+        const fetchTalent = async () => {
           const response = await fetch(
-            API_URL
+            TALENTS_API_URL
           );
           const jsonRows = await response.json();
           setRows(jsonRows);
-          setHasLoaded(true)
+          setHasLoadedTalent(true)
         };
-        fetchUser();
+        const fetchClient = async () => {
+          const response = await fetch(
+            CLIENTS_API_URL
+          );
+          const jsonRows = await response.json();
+          setHasLoadedClient(true)
+        };
+        fetchTalent();
+        fetchClient();
       }, []);
    
-    if (hasLoaded) {
+    if (hasLoadedTalent && hasLoadedClient) {
         return(
             <div style={{position: 'absolute', height: '100vh', width: '100vw', backgroundColor: '#FC8C36'}}>
                 <div style={{height: '100px', position: 'relative'}}>
@@ -41,7 +51,7 @@ export default function IntegradorPage() {
                     <TalentTable rows = {rows}/>
                 </div>
                 <div style={{width: '25%', float: 'left', display: 'inline-block', marginLeft: '30px', marginTop: '-28px', marginBottom: '35px'}}>
-                    <CostumerCard/>
+                    <CostumerCard name={'Maria'} project={'App'} contact={'maria@usp'} price={'15.000'} status={'Em andamento'}/>
                 </div>
                 <div style={{width: '25%', float: 'left', display: 'inline-block', marginLeft: '30px', marginTop: '-28px', marginBottom: '35px'}}>
                     <CostumerCard/>

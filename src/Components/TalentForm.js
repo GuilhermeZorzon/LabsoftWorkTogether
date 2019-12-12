@@ -32,20 +32,6 @@ class TalentForm extends Component {
         .then(function (response) {
                 console.log("The response of the server: " + response.data);
         })
-        /*fetch(API_URL, {
-          method: 'POST',
-          headers: {
-            'Content-type': 'application/json',
-          },
-          body: JSON.stringify({
-                "name": this.state.name,
-                "contact": this.state.contact,
-                "specialty": this.state.specialty,
-                "price": this.state.price,
-          }),
-        })
-          .then(res => res.json())
-          .then(res => console.log(res));*/
     }
 
     render() {
@@ -72,18 +58,18 @@ class TalentForm extends Component {
                     <Textfield
                         onChange={(event) => {this.setState({specialty: event.target.value});}}
                         label="Caracteristicas e principais habilidades"
-                        rows={3}
+                        rows={2}
                         floatingLabel
                         style={{width: '800px', marginTop: '20px'}}
                     />
                 </div>
                 <div style={{marginLeft: '250px', width: '850px', marginTop: '75px', marginBottom: '25px'}}>
-                    <div style={{marginLeft: '30px', marginBottom: '50px', fontSize: '16px'}}>Quanto você cobrará por hora??</div>
-                    <Slider min={0} max={100} defaultValue={50} onChange={(event) => {this.setState({price: event.target.value + ",00"});}}/>
+                    <div style={{marginLeft: '30px', marginBottom: '50px', fontSize: '16px'}}>Quanto você cobrará por hora?</div>
+                    <Slider min={0} max={100} defaultValue={50} onChange={(event) => {this.setState({price: (parseInt(event.target.value) + 10).toString() + ",00"});}}/>
                     <div style={{marginTop: '25px'}}>
-                        <span style={{fontSize: '18px', color: '#F86D04'}}>R$ 00,00</span>
-                        <span style={{fontSize: '18px', color: '#F86D04', marginLeft: '300px'}}>R$ 50,00</span>
-                        <span style={{fontSize: '18px', color: '#F86D04', marginLeft: '300px'}}>R$ +100,00</span>
+                        <span style={{fontSize: '18px', color: '#F86D04'}}>R$ 10,00</span>
+                        <span style={{fontSize: '18px', color: '#F86D04', marginLeft: '300px'}}>R$ 60,00</span>
+                        <span style={{fontSize: '18px', color: '#F86D04', marginLeft: '300px'}}>R$ +110,00</span>
                     </div>             
                 </div>
                 <div>
@@ -92,11 +78,11 @@ class TalentForm extends Component {
                             Voltar
                         </button>
                     </a>
-                    <button onClick ={this.handleSubmit} style={{float: 'right', marginRight: '150px', marginTop: '50px', cursor: 'pointer', color: 'white', borderRadius: '10px', border: 'transparent', backgroundColor: '#F86D04', width: '100px', height: '30px'}}>
-                        <a href="/TalentSuccess" onClick ={this.handleSubmit} style={{textDecoration: 'none', color: 'white', align: 'center', margin: '0', padding: '0'}}>
+                    <a href="/ClientSuccess" onClick ={this.handleSubmit} style={{float: 'right', margin: '0', padding: '0'}}>
+                        <button onClick ={this.handleSubmit} style={{marginRight: '150px', marginTop: '50px', cursor: 'pointer', color: 'white', borderRadius: '10px', border: 'transparent', backgroundColor: '#F86D04', width: '100px', height: '30px'}}>
                             Continuar
-                        </a>
-                    </button>
+                        </button>
+                    </a>
                 </div>
             </div>
         )

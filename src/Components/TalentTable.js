@@ -2,6 +2,7 @@ import React from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
+import Typography from '@material-ui/core/Typography';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
@@ -45,7 +46,8 @@ const useStyles = makeStyles({
 
 const StyledTableCell = withStyles(theme => ({
     head: {
-      backgroundColor: '#999999',
+      backgroundColor: '#353535',
+      color: 'white',
       fontWeight: 'bold',
     },
   }))(TableCell);
@@ -64,6 +66,10 @@ export const TalentTable = (props) => {
   return (
     <Paper className={classes.root}>
       <div className={classes.tableWrapper}>
+        <Typography align="center" className={classes.title} variant="h5" style={{backgroundColor: '#353535', color: 'white'}}>
+          Talentos
+        </Typography>
+        <hr style={{margin: '0px', color: '#c5c5c5'}}></hr>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <StyledTableRow>
